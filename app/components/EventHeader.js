@@ -11,8 +11,8 @@ const EventHeader = ({ event }) => {
   return (
     <div className="flex items-center space-x-4 p-4 border bg-white shadow-md">
       {/* Back Button */}
-      <button 
-        onClick={() => router.back()} 
+      <button
+        onClick={() => router.back()}
         className="text-gray-600 hover:text-gray-800 focus:outline-none"
       >
         ←
@@ -38,11 +38,13 @@ const EventHeader = ({ event }) => {
         </p>
 
         {/* Status */}
-        <div className="flex items-center mt-1">
+        {event.status && <div className="flex items-center mt-1">
           <span className="text-pink-600 font-medium text-xs bg-pink-100 px-2 py-0.5 rounded-full">
-            {event.status ? event.status.label : ""}
+            {event.status.label}
           </span>
         </div>
+        }
+
       </div>
     </div>
   );
