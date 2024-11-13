@@ -6,7 +6,6 @@ import StadiumPng from '../../stadium.png'
 import ListingList from '../../components/ListingList';
 import EventHeader from '../../components/EventHeader';
 import listingData from '../../data.json';
-import styles from './page.module.css';
 
 export default async function EventPage({ params }) {
   const { id } = params;
@@ -117,14 +116,13 @@ export default async function EventPage({ params }) {
   return (
     <div>
       <EventHeader event={eventData} />
-      <div className={styles.eventContainer}>
+      <div className='flex flex-col md:flex-row'>
         {/* Left Side: Stadium Image */}
-        <div className={styles.stadiumImage}>
-          <Image src={StadiumPng} alt="test" layout="fill" objectFit="contain" />
+        <div className='relative h-80 md:flex-1'>
+          <Image src={StadiumPng} alt='test' layout='fill' objectFit='contain' />
         </div>
-
         {/* Right Side: Event Details and Listings */}
-        <div className={styles.eventDetails}>
+        <div className='md:w-[512px]'>
           <ListingList initialListings={initialListings} eventId={id} />
         </div>
       </div>

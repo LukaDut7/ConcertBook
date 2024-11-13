@@ -1,65 +1,7 @@
 // app/page.js
 
 // import { getTaylorSwiftEvents } from './utils/getTaylorSwiftEvents';
-const styles = {
-  link: {
-    display: 'flex',
-    alignItems: 'center',
-    border: '1px solid #e2e2e2',
-    borderRadius: '8px',
-    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-    padding: '16px',
-    textDecoration: 'none',
-    backgroundColor: 'white',
-    color: 'inherit',
-    gap: '16px',
-  },
-  dateSection: {
-    textAlign: 'center',
-    paddingRight: '16px',
-    borderRight: '1px solid #e2e2e2',
-  },
-  date: {
-    fontSize: '1.125rem',
-    fontWeight: 'bold',
-  },
-  dayTime: {
-    fontSize: '0.875rem',
-  },
-  week: {
-    fontSize: '0.75rem',
-    color: '#6b7280',
-  },
-  eventDetails: {
-    flex: 1,
-  },
-  eventName: {
-    fontSize: '1.25rem',
-    fontWeight: '600',
-    margin: 0,
-  },
-  stadium: {
-    color: '#4b5563',
-    fontSize: '0.875rem',
-    margin: '4px 0',
-  },
-  location: {
-    color: '#6b7280',
-    fontSize: '0.875rem',
-  },
-  button: {
-    backgroundColor: '#7c3aed',
-    color: 'white',
-    borderRadius: '8px',
-    padding: '8px 16px',
-    fontSize: '1rem',
-    cursor: 'pointer',
-    border: 'none',
-  },
-  buttonHover: {
-    backgroundColor: '#6d28d9',
-  },
-};
+
 export default async function Home() {
   // const events = await getTaylorSwiftEvents();
   const events = 
@@ -167,28 +109,27 @@ export default async function Home() {
       <ul>
         {events.map((event) => (
           <li key={event.id}>
-            <a
-              href={`./events/${event.id}.html`}
-              style={styles.link}
-            >
+            <a className="flex items-center border rounded-lg shadow p-4 space-x-4 bg-white" href={`/events/${event.id}`}>
               {/* Date Section */}
-              <div style={styles.dateSection}>
-                <p style={styles.date}>{event.date}</p>
-                <p style={styles.dayTime}>{event.day}</p>
-                <p style={styles.dayTime}>{event.time}</p>
-                <p style={styles.week}>{event.week}</p>
+              <div className="text-center border-r pr-4">
+                <p className="text-lg font-bold">{event.date}</p>
+                <p className="text-sm">{event.day}</p>
+                <p className="text-sm">{event.time}</p>
+                <p className="text-xs text-gray-500">{event.week}</p>
               </div>
-
+              
               {/* Event Details */}
-              <div style={styles.eventDetails}>
-                <h2 style={styles.eventName}>{event.name}</h2>
-                <p style={styles.stadium}>{event.stadium}</p>
-                <p style={styles.location}>{event.location}</p>
+              <div className="flex-1">
+                <h2 className="text-xl font-semibold">{event.name}</h2>
+                <p className="text-gray-600">{event.stadium}</p>
+                <p className="text-gray-500">{event.location}</p>
               </div>
-
+              
               {/* Action Button */}
               <div>
-                <button style={styles.button}>See tickets</button>
+                <button className="bg-purple-600 text-white rounded-lg py-2 px-4 hover:bg-purple-700">
+                  See tickets
+                </button>
               </div>
             </a>
           </li>
