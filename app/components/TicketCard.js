@@ -3,11 +3,11 @@ import Image from 'next/image';
 
 const TicketCard = ({ ticket }) => {
   return (
-    <div className="flex border rounded-lg shadow p-4 space-x-4 bg-white max-w-2xl">
+    <div className="flex border rounded-lg shadow p-4 space-x-4 bg-white">
       {/* Image Section */}
       <div className="relative w-32 h-24">
         <Image
-          src={ticket.imageUrl}
+          src={ticket.imgUrl}
           alt={ticket.section}
           layout="fill"
           objectFit="cover"
@@ -51,7 +51,7 @@ const TicketCard = ({ ticket }) => {
 
         <div className="flex items-center mt-2">
           <span className="bg-green-200 text-green-800 text-xs font-semibold px-2 py-0.5 rounded">
-            {ticket.rating ? ticket.rating.toFixed(1): ""}
+            {ticket.rating ? ticket.rating.toFixed(1): null}
           </span>
           <span className="ml-2 text-sm text-gray-600">{ticket.ratingLabel}</span>
         </div>
