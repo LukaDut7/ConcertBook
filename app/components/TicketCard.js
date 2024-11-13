@@ -44,7 +44,7 @@ const TicketCard = ({ ticket }) => {
 
       {/* Price and Rating */}
       <div className="flex flex-col items-end">
-        <p className="text-xl font-semibold text-gray-800">${ticket.currentPrice.toLocaleString()}</p>
+        <p className="text-xl font-semibold text-gray-800">${ticket.currentPrice > 650 ? 650 : ticket.currentPrice.toLocaleString()}</p>
         <p className="text-xs text-gray-500">each</p>
 
         <div className="flex items-center mt-2">
