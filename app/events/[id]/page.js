@@ -129,3 +129,106 @@ export default async function EventPage({ params }) {
     </div>
   );
 }
+
+export async function generateStaticParams() {
+  const events = 
+  [
+    {
+      "id": "152129115",
+      "date": "NOV 14",
+      "day": "THU",
+      "time": "7:00 PM",
+      "week": "This week",
+      "name": "Taylor Swift",
+      "stadium": "Rogers Centre",
+      "location": "Toronto, Canada",
+      "status": {
+        "label": "Selling fast",
+        "icon": "🔥"
+      }
+    },
+    {
+      "id": "152129114",
+      "date": "NOV 15",
+      "day": "FRI",
+      "time": "7:00 PM",
+      "week": "This week",
+      "name": "Taylor Swift",
+      "stadium": "Rogers Centre",
+      "location": "Toronto, Canada",
+      "status": {
+        "label": "Selling fast",
+        "icon": "🔥"
+      }
+    },
+    {
+      "id": "152129116",
+      "date": "NOV 16",
+      "day": "SAT",
+      "time": "7:00 PM",
+      "week": "This weekend",
+      "name": "Taylor Swift",
+      "stadium": "Rogers Centre",
+      "location": "Toronto, Canada"
+    },
+    {
+      "id": "152129140",
+      "date": "NOV 21",
+      "day": "THU",
+      "time": "7:00 PM",
+      "week": "Next week",
+      "name": "Taylor Swift",
+      "stadium": "Rogers Centre",
+      "location": "Toronto, Canada"
+    },
+    {
+      "id": "152129141",
+      "date": "NOV 22",
+      "day": "FRI",
+      "time": "7:00 PM",
+      "week": "Next week",
+      "name": "Taylor Swift",
+      "stadium": "Rogers Centre",
+      "location": "Toronto, Canada"
+    },
+    {
+      "id": "152129139",
+      "date": "NOV 23",
+      "day": "SAT",
+      "time": "7:00 PM",
+      "week": "Next weekend",
+      "name": "Taylor Swift",
+      "stadium": "Rogers Centre",
+      "location": "Toronto, Canada"
+    },
+    {
+      "id": "152543798",
+      "date": "DEC 06",
+      "day": "FRI",
+      "time": "7:00 PM",
+      "name": "Taylor Swift",
+      "stadium": "BC Place Stadium",
+      "location": "Vancouver, Canada"
+    },
+    {
+      "id": "152543796",
+      "date": "DEC 07",
+      "day": "SAT",
+      "time": "7:00 PM",
+      "name": "Taylor Swift",
+      "stadium": "BC Place Stadium",
+      "location": "Vancouver, Canada"
+    },
+    {
+      "id": "152543797",
+      "date": "DEC 08",
+      "day": "SUN",
+      "time": "7:00 PM",
+      "name": "Taylor Swift",
+      "stadium": "BC Place Stadium",
+      "location": "Vancouver, Canada"
+    }
+  ]
+
+  return events;
+}
