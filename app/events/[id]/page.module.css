@@ -1,0 +1,22 @@
+.eventContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.stadiumImage {
+  position: relative;
+  height: 320px; /* Matches Tailwind's h-80 */
+  flex: 1;
+}
+
+.eventDetails {
+  width: 100%;
+  max-width: 512px;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .eventContainer {
+    flex-direction: row;
+  }
+}
