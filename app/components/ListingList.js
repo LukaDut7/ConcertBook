@@ -51,10 +51,6 @@ export default function ListingList({ initialListings, eventId }) {
   return (
     <div>
       {listings.map((listing) => <TicketCard ticket={listing} key={listing.id} />)}
-      {isFetching && <p>Loading more listings...</p>}
-      <button onClick={() => proceedToCheckout(selectedSeats)}>
-        Proceed to Checkout
-      </button>
     </div>
   );
 }

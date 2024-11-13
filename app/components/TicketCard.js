@@ -51,7 +51,7 @@ const TicketCard = ({ ticket }) => {
 
         <div className="flex items-center mt-2">
           <span className="bg-green-200 text-green-800 text-xs font-semibold px-2 py-0.5 rounded">
-            {ticket.rating.toFixed(1)}
+            {ticket.rating ? ticket.rating.toFixed(1): ""}
           </span>
           <span className="ml-2 text-sm text-gray-600">{ticket.ratingLabel}</span>
         </div>
