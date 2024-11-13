@@ -111,7 +111,7 @@ export default async function EventPage({ params }) {
   const eventData = events[id]
   // const event = await getEventDetails(id);
   // const initialListings = await getEventListings(id);
-  const initialListings = listingData[id]
+  const initialListings = listingData[1][id]
 
   return (
     <div>
