@@ -109,7 +109,7 @@ export default async function Home() {
       <ul>
         {events.map((event) => (
           <li key={event.id}>
-            <a className="flex items-center border rounded-lg shadow p-4 space-x-4 bg-white" href={`/events/${event.id}`}>
+            <a className="flex items-center border rounded-lg shadow p-4 space-x-4 bg-white" href={`/events/${event.id}.html`}>
               {/* Date Section */}
               <div className="text-center border-r pr-4">
                 <p className="text-lg font-bold">{event.date}</p>
