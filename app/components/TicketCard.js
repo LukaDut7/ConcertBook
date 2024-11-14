@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import PaymentModal from "./PaymentModal";
 
-const TicketCard = ({ ticket }) => {
+const TicketCard = ({ ticket, seats }) => {
   const [isModalOpen, setModalOpen] = useState(false);
 
   const openModal = () => setModalOpen(true);
@@ -62,7 +62,10 @@ const TicketCard = ({ ticket }) => {
         {/* Price and Rating */}
         <div className="flex flex-col items-end">
           <p className="text-xl font-semibold text-gray-800">
-            ${ticket.currentPrice - 900}
+            $
+            {ticket.currentPrice > 900
+              ? ticket.currentPrice - 900
+              : ticket.currentPrice}
           </p>
           <p className="text-xs text-gray-500">each</p>
 
@@ -78,7 +81,12 @@ const TicketCard = ({ ticket }) => {
           </div>
         </div>
       </div>
-      <PaymentModal isOpen={isModalOpen} onClose={closeModal} ticket={ticket} />
+      <PaymentModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        ticket={ticket}
+        seats={seats}
+      />
     </>
   );
 };

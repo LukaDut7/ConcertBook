@@ -2,25 +2,44 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
-const PaymentModal = ({ isOpen, onClose, ticket }) => {
+const PaymentModal = ({ isOpen, onClose, ticket, seats }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState("");
+  const [code, setCode] = useState("");
+
+  const router = useRouter();
 
   if (!isOpen) return null; // If modal is not open, return nothing.
+
+  const generateCode = (email, ticket, seats) => {
+    const input = email + JSON.stringify(ticket) + seats;
+    let hash = 0;
+    for (let i = 0; i < input.length; i++) {
+      const chr = input.charCodeAt(i);
+      hash = (hash << 5) - hash + chr;
+      hash |= 0; // Convert to 32bit integer
+    }
+    const code = Math.abs(hash) % 100000; // Ensure it's positive and get last 5 digits
+    return code.toString().padStart(5, "0");
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setMessage("");
 
-    // Here you can add your email sending logic, for example, using an API
-    // Simulating email sending
+    // Simulating email sending and code generation
     setTimeout(() => {
       setIsSubmitting(false);
-      setMessage("Thanks for signing up! We’ll send you a free Taylor Swift friendship bracelet for attending the event.");
+      const generatedCode = generateCode(email, ticket, seats);
+      setCode(generatedCode);
+      setMessage(
+        "Thanks for signing up! We’ll send you a free Taylor Swift friendship bracelet for attending the event."
+      );
       setName("");
       setEmail("");
     }, 2000); // Simulating a 2-second delay for email sending
@@ -102,54 +121,83 @@ const PaymentModal = ({ isOpen, onClose, ticket }) => {
         {/* Payment Instructions */}
         <div className="mt-6">
           <p className="text-sm text-gray-700">
-            Pay us $300 by INTERAC email money by sending payment to{" "}
+            Pay us --TaylorSwift Tickets-- $
+            {(ticket.currentPrice > 900
+              ? ticket.currentPrice - 900
+              : ticket.currentPrice) * seats}{" "}
+            by INTERAC email money by sending payment to{" "}
             <span className="font-semibold text-blue-600">
-              ticketpayment@taylorswifttickets.ca
+              ticketpurchase@taylorswifttickets.ca
             </span>
           </p>
         </div>
 
         {/* User Input Form */}
-        <form onSubmit={handleSubmit} className="mt-6 space-y-4">
-          <div>
-            <label htmlFor="name" className="block text-sm text-gray-700">
-              Your Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="w-full mt-2 p-2 border border-gray-300 rounded-md"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="email" className="block text-sm text-gray-700">
-              Your Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full mt-2 p-2 border border-gray-300 rounded-md"
-              required
-            />
-          </div>
+        {!code && (
+          <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+            <div>
+              <label htmlFor="name" className="block text-sm text-gray-700">
+                Your Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="w-full mt-2 p-2 border border-gray-300 rounded-md"
+                required
+                disabled={isSubmitting}
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-sm text-gray-700">
+                Your Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full mt-2 p-2 border border-gray-300 rounded-md"
+                required
+                disabled={isSubmitting}
+              />
+            </div>
 
-          {message && <p className="text-sm text-green-600">{message}</p>}
+            {message && <p className="text-sm text-green-600">{message}</p>}
 
-          <div>
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full bg-blue-600 text-white py-2 px-4 rounded-md"
-            >
-              {isSubmitting ? "Sending..." : "Get Your Bracelet"}
-            </button>
+            <div>
+              <button
+                disabled={isSubmitting}
+                className="w-full bg-blue-600 text-white py-2 px-4 rounded-md"
+              >
+                {isSubmitting ? "Processing..." : "Buy Now!"}
+              </button>
+            </div>
+          </form>
+        )}
+
+        {/* Confirmation Code and Instructions */}
+        {code && (
+          <div className="mt-6">
+            <p className="text-sm text-green-600">{message}</p>
+            <div className="mt-4">
+              <p className="text-sm text-gray-700">
+                Please write down your confirmation code:{" "}
+                <span className="font-bold">{code}</span>
+              </p>
+              <p className="text-sm text-gray-700">
+                Use this code when you send the email money transfer.
+              </p>
+              <button
+                onClick={() => router.push("/instructions")}
+                className="mt-4 w-full bg-green-600 text-white py-2 px-4 rounded-md"
+              >
+                Continue to Instructions
+              </button>
+            </div>
           </div>
-        </form>
+        )}
       </div>
     </div>
   );

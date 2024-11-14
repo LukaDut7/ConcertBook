@@ -1,7 +1,10 @@
 // app/page.js
 
 // import { getTaylorSwiftEvents } from './utils/getTaylorSwiftEvents';
+import Script from "next/script";
 import backgroundImg from "./backgroundImage.jpg";
+import Image from "next/image";
+import mainImg from "./main.jpg";
 
 export default async function Home() {
   // const events = await getTaylorSwiftEvents();
@@ -111,7 +114,6 @@ export default async function Home() {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-
     >
       <video
         autoPlay
@@ -134,7 +136,7 @@ export default async function Home() {
             >
               <a
                 className="flex items-center p-6 hover:bg-purple-50 transition duration-200"
-                href={`/events/${event.id}.html`}
+                href={`/events/${event.id}/1.html`}
               >
                 {/* Date Section */}
                 <div className="text-center border-r border-gray-200 pr-6 mr-6">
@@ -172,6 +174,19 @@ export default async function Home() {
           ))}
         </ul>
       </div>
+      <Script id="liveChat1">
+        {`
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/673643a52480f5b4f59e14f4/1iclvgg05';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    `}
+      </Script>
     </div>
   );
 }
