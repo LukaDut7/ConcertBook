@@ -40,7 +40,7 @@ const EventHeader = ({ event }) => {
         {/* Status */}
         {event.status && <div className="flex items-center mt-1">
           <span className="text-pink-600 font-medium text-xs bg-pink-100 px-2 py-0.5 rounded-full">
-            {event.status.label}
+           {event.status.icon} {event.status.label}
           </span>
         </div>
         }
