@@ -113,6 +113,15 @@ export default async function Home() {
       }}
 
     >
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+      >
+        <source src="./videos/background.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <div className="max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold text-center text-purple-700 mb-8">
           9 events in all locations
