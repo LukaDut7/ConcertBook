@@ -125,7 +125,7 @@ export default async function Home() {
             >
               <a
                 className="flex items-center p-6 hover:bg-purple-50 transition duration-200"
-                href={`/events/${event.id}`}
+                href={`/events/${event.id}.html`}
               >
                 {/* Date Section */}
                 <div className="text-center border-r border-gray-200 pr-6 mr-6">
