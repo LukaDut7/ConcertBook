@@ -32,7 +32,7 @@ export default function InstructionsPage() {
         </li>
         <li className="text-gray-700">
           **Add a New Recipient**: Use our email address{" "}
-          <strong>ticketpurchase@taylorswifttickets.ca</strong> as the
+          <strong>Taylorswiftticketsca@gmail.com</strong> as the
           recipient.
         </li>
         <li className="text-gray-700">
