@@ -107,9 +107,9 @@ export default async function Home() {
 
   return (
     <div>
-      <div className="absolute left-8 top-8 z-40 rounded-lg overflow-hidden shadow-lg">
+      {/* <div className="absolute left-8 top-8 z-40 rounded-lg overflow-hidden shadow-lg">
         <Image src={Logo} alt="Logo" width={200} height={50} />
-      </div>
+      </div> */}
       <div className="absolute left-8 top-[45%] transform -translate-y-1/2 z-30 rounded-lg overflow-hidden shadow-lg">
         <Image src={Banner} alt="Banner" width={500} height={250} />
       </div>
