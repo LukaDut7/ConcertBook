@@ -63,7 +63,7 @@ export default function InstructionsPage() {
       <p className="mt-8 text-gray-700 text-center">
         Once we receive the payment, we will send you a confirmation email with
         your ticket details. For any questions, contact us at{" "}
-        <strong>ticketpurchase@taylorswifttickets.ca</strong>.
+        <strong>Taylorswiftticketsca@gmail.com</strong>.
       </p>
     </div>
   );
