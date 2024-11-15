@@ -127,7 +127,7 @@ const PaymentModal = ({ isOpen, onClose, ticket, seats }) => {
               : ticket.currentPrice) * seats}{" "}
             by INTERAC email money by sending payment to{" "}
             <span className="font-semibold text-blue-600">
-            Taylorswiftticketsca@gmail.com
+            ticketsales@taylorswifttickets.ca
             </span>
           </p>
         </div>

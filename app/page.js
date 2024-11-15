@@ -118,7 +118,7 @@ export default async function Home() {
       </div>
 
       {/* Conditional mainImg Section */}
-      <div className="absolute right-8 top-[50%] transform -translate-y-1/2 z-30 rounded-lg overflow-hidden shadow-lg hidden md:block">
+      <div className="absolute right-8 top-[30%] transform -translate-y-1/2 z-30 rounded-lg overflow-hidden shadow-lg hidden md:block">
         <Image src={mainImg} alt="Main Image" width={350} height={250} />
       </div>
 
@@ -129,7 +129,7 @@ export default async function Home() {
           Your browser does not support the video tag.
         </video>
       </div>
-      <div className="w-full border-t border-dashed border-black mb-4"></div>
+      <div className="w-full border-t border-dashed border-black mb-10"></div>
 
       {/* Event List Section */}
       <div className="relative w-full flex-1 py-8">

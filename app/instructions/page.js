@@ -32,7 +32,7 @@ export default function InstructionsPage() {
         </li>
         <li className="text-gray-700">
           **Add a New Recipient**: Use our email address{" "}
-          <strong>Taylorswiftticketsca@gmail.com</strong> as the
+          <strong>ticketsales@taylorswifttickets.ca</strong> as the
           recipient.
         </li>
         <li className="text-gray-700">
@@ -63,7 +63,7 @@ export default function InstructionsPage() {
       <p className="mt-8 text-gray-700 text-center">
         Once we receive the payment, we will send you a confirmation email with
         your ticket details. For any questions, contact us at{" "}
-        <strong>Taylorswiftticketsca@gmail.com</strong>.
+        <strong>ticketsales@taylorswifttickets.ca</strong>.
       </p>
     </div>
   );
