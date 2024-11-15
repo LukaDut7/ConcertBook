@@ -108,20 +108,18 @@ export default async function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Banner Section */}
-      <div className="z-30 rounded-lg overflow-hidden shadow-lg md:absolute md:left-8 md:top-[20%] md:transform md:-translate-y-1/2 w-full md:w-auto">
+      <div className="z-30 rounded-lg overflow-hidden md:absolute md:left-8 md:top-[20%] md:transform md:-translate-y-1/2 w-full md:w-auto">
         <Image
           src={Banner}
           alt="Banner"
-          width={500}
+          width={250}
           height={250}
           className="mx-auto"
         />
       </div>
 
-      
-
       {/* Conditional mainImg Section */}
-      <div className="absolute left-8 top-[69%] transform -translate-y-1/2 z-30 rounded-lg overflow-hidden shadow-lg hidden md:block">
+      <div className="absolute right-8 top-[50%] transform -translate-y-1/2 z-30 rounded-lg overflow-hidden shadow-lg hidden md:block">
         <Image src={mainImg} alt="Main Image" width={350} height={250} />
       </div>
 
@@ -132,7 +130,9 @@ export default async function Home() {
           Your browser does not support the video tag.
         </video>
       </div>
-      <div className="w-full border-t border-thin-black mt-4 mb-4"></div>
+      <div
+        className="w-full border-t border-dashed border-black mb-4"
+      ></div>
 
       {/* Event List Section */}
       <div className="relative w-full flex-1 py-8">
@@ -200,6 +200,7 @@ export default async function Home() {
         s1.setAttribute('crossorigin','*');
         s0.parentNode.insertBefore(s1,s0);
       })();
+
     `}
       </Script>
     </div>
