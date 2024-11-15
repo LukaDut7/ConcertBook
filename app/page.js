@@ -1,6 +1,5 @@
 // app/page.js
 
-import Script from "next/script";
 import Banner from "./banner.png";
 import Logo from "./logo.png";
 import Image from "next/image";
@@ -130,9 +129,7 @@ export default async function Home() {
           Your browser does not support the video tag.
         </video>
       </div>
-      <div
-        className="w-full border-t border-dashed border-black mb-4"
-      ></div>
+      <div className="w-full border-t border-dashed border-black mb-4"></div>
 
       {/* Event List Section */}
       <div className="relative w-full flex-1 py-8">
@@ -187,22 +184,6 @@ export default async function Home() {
           </ul>
         </div>
       </div>
-
-      {/* Live Chat Script */}
-      <Script id="liveChat1">
-        {`
-      var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-      (function(){
-        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/673643a52480f5b4f59e14f4/1iclvgg05';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
-      })();
-
-    `}
-      </Script>
     </div>
   );
 }
