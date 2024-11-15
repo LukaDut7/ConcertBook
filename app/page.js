@@ -108,7 +108,7 @@ export default async function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Banner Section */}
-      <div className="z-30 rounded-lg overflow-hidden shadow-lg md:absolute md:left-8 md:top-[45%] md:transform md:-translate-y-1/2 w-full md:w-auto">
+      <div className="z-30 rounded-lg overflow-hidden shadow-lg md:absolute md:left-8 md:top-[20%] md:transform md:-translate-y-1/2 w-full md:w-auto">
         <Image
           src={Banner}
           alt="Banner"
@@ -118,8 +118,10 @@ export default async function Home() {
         />
       </div>
 
+      
+
       {/* Conditional mainImg Section */}
-      <div className="absolute right-12 top-[40%] transform -translate-y-1/2 z-30 rounded-lg overflow-hidden shadow-lg hidden md:block">
+      <div className="absolute left-8 top-[69%] transform -translate-y-1/2 z-30 rounded-lg overflow-hidden shadow-lg hidden md:block">
         <Image src={mainImg} alt="Main Image" width={350} height={250} />
       </div>
 
@@ -130,6 +132,7 @@ export default async function Home() {
           Your browser does not support the video tag.
         </video>
       </div>
+      <div className="w-full border-t border-thin-black mt-4 mb-4"></div>
 
       {/* Event List Section */}
       <div className="relative w-full flex-1 py-8">
