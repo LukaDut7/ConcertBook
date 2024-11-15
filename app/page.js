@@ -106,24 +106,34 @@ export default async function Home() {
   ];
 
   return (
-    <div>
-      {/* <div className="absolute left-8 top-8 z-40 rounded-lg overflow-hidden shadow-lg">
-        <Image src={Logo} alt="Logo" width={200} height={50} />
-      </div> */}
-      <div className="absolute left-8 top-[45%] transform -translate-y-1/2 z-30 rounded-lg overflow-hidden shadow-lg">
-        <Image src={Banner} alt="Banner" width={500} height={250} />
+    <div className="flex flex-col min-h-screen">
+      {/* Banner Section */}
+      <div className="z-30 rounded-lg overflow-hidden shadow-lg md:absolute md:left-8 md:top-[45%] md:transform md:-translate-y-1/2 w-full md:w-auto">
+        <Image
+          src={Banner}
+          alt="Banner"
+          width={500}
+          height={250}
+          className="mx-auto"
+        />
       </div>
-      <div className="absolute right-12 top-[40%] transform -translate-y-1/2 z-30 rounded-lg overflow-hidden shadow-lg">
-        <Image src={mainImg} alt="Banner" width={350} height={250} />
+
+      {/* Conditional mainImg Section */}
+      <div className="absolute right-12 top-[40%] transform -translate-y-1/2 z-30 rounded-lg overflow-hidden shadow-lg hidden md:block">
+        <Image src={mainImg} alt="Main Image" width={350} height={250} />
       </div>
-      <div className="relative w-full h-[350px] overflow-hidden">
+
+      {/* Video Background */}
+      <div className="relative w-full h-[350px] overflow-hidden hidden md:block">
         <video autoPlay loop muted className="w-full h-full object-cover">
           <source src="./videos/sonny video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
-      <div className="relative min-h-screen py-8">
-        <div className="max-w-3xl mx-auto">
+
+      {/* Event List Section */}
+      <div className="relative w-full flex-1 py-8">
+        <div className="max-w-3xl mx-auto px-4 md:px-8">
           <h1 className="text-3xl font-bold text-center text-purple-700 mb-8">
             9 events in all locations
           </h1>
@@ -134,11 +144,11 @@ export default async function Home() {
                 className="shadow-lg rounded-lg overflow-hidden bg-white"
               >
                 <a
-                  className="flex items-center p-6 hover:bg-purple-50 transition duration-200"
+                  className="flex flex-col md:flex-row items-center md:items-start p-6 hover:bg-purple-50 transition duration-200"
                   href={`/events/${event.id}/1.html`}
                 >
                   {/* Date Section */}
-                  <div className="text-center border-r border-gray-200 pr-6 mr-6">
+                  <div className="text-center border-b md:border-b-0 md:border-r border-gray-200 pb-4 md:pb-0 pr-0 md:pr-6 mb-4 md:mb-0 md:mr-6">
                     <p className="text-lg font-bold text-gray-900">
                       {event.date}
                     </p>
@@ -148,14 +158,14 @@ export default async function Home() {
                   </div>
 
                   {/* Event Details */}
-                  <div className="flex-1">
+                  <div className="flex-1 text-center md:text-left">
                     <h2 className="text-xl font-semibold text-gray-800">
                       {event.name}
                     </h2>
                     <p className="text-gray-600">{event.stadium}</p>
                     <p className="text-gray-500">{event.location}</p>
                     {event.status && (
-                      <p className="text-red-600 mt-2 flex items-center">
+                      <p className="text-red-600 mt-2 flex items-center justify-center md:justify-start">
                         <span className="mr-1">{event.status.icon}</span>
                         {event.status.label}
                       </p>
@@ -163,7 +173,7 @@ export default async function Home() {
                   </div>
 
                   {/* Action Button */}
-                  <div>
+                  <div className="mt-4 md:mt-0">
                     <button className="bg-purple-600 text-white rounded-lg py-2 px-4 hover:bg-purple-700 transition duration-200">
                       See tickets
                     </button>
@@ -173,20 +183,22 @@ export default async function Home() {
             ))}
           </ul>
         </div>
-        <Script id="liveChat1">
-          {`
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/673643a52480f5b4f59e14f4/1iclvgg05';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    `}
-        </Script>
       </div>
+
+      {/* Live Chat Script */}
+      <Script id="liveChat1">
+        {`
+      var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+      (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/673643a52480f5b4f59e14f4/1iclvgg05';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+      })();
+    `}
+      </Script>
     </div>
   );
 }
