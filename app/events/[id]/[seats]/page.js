@@ -12,6 +12,7 @@ import StadiumPng152543796 from "../../../stadiumImgs/stadium152543796.png";
 import StadiumPng152543797 from "../../../stadiumImgs/stadium152543797.png";
 import ListingList from "../../../components/ListingList";
 import EventHeader from "../../../components/EventHeader";
+import SeatingChart from "../../../components/SeatingChart";
 import listingData from "../../../data.json";
 
 export default async function EventPage({ params }) {
