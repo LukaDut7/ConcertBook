@@ -143,13 +143,13 @@ export default async function EventPage({ params }) {
           {seats === "1" && (
             <div className="flex space-x-4">
               <a
-                href={`/events/${eventData.id}/1.html`}
+                href={`/events/${eventData.id}/1`}
                 className="px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-blue-600 rounded-lg hover:bg-blue-700 hover:border-blue-700"
               >
                 1 Seat
               </a>
               <a
-                href={`/events/${eventData.id}/2.html`}
+                href={`/events/${eventData.id}/2`}
                 className="px-4 py-2 text-sm font-medium text-blue-600 bg-white border border-blue-300 rounded-lg hover:bg-blue-100 hover:text-blue-700"
               >
                 2 Seats
@@ -159,13 +159,13 @@ export default async function EventPage({ params }) {
           {seats === "2" && (
             <div className="flex space-x-4">
               <a
-                href={`/events/${eventData.id}/1.html`}
+                href={`/events/${eventData.id}/1`}
                 className="px-4 py-2 text-sm font-medium text-blue-600 bg-white border border-blue-300 rounded-lg hover:bg-blue-100 hover:text-blue-700"
               >
                 1 Seat
               </a>
               <a
-                href={`/events/${eventData.id}/2.html`}
+                href={`/events/${eventData.id}/2`}
                 className="px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-blue-600 rounded-lg hover:bg-blue-700 hover:border-blue-700"
               >
                 2 Seats

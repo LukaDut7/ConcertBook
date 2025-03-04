@@ -145,7 +145,7 @@ export default async function Home() {
               >
                 <a
                   className="flex flex-col md:flex-row items-center md:items-start p-6 hover:bg-purple-50 transition duration-200"
-                  href={`/events/${event.id}/1.html`}
+                  href={`/events/${event.id}/1`}
                 >
                   {/* Date Section */}
                   <div className="text-center border-b md:border-b-0 md:border-r border-gray-200 pb-4 md:pb-0 pr-0 md:pr-6 mb-4 md:mb-0 md:mr-6">
